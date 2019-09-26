@@ -78,15 +78,11 @@
 }
 .main-nav a:hover{
     color: var(--white);
-    text-decoration: none;
-    padding: 0px;
     font-size: 1.1rem;
     text-align: center;
-    padding: 0.4rem;
-    background-color: var(--primary);
-    margin: 0px;
-    height: 66px;
-    border-radius: 14px;
+    border-bottom: 2px solid var(--black);
+    
+    
 }
 .search-box{
     margin: auto 0px auto 0px;
@@ -135,6 +131,11 @@
     text-decoration: none;
     border-bottom: 2px solid var(--primary);
 }
+/*hide toggle nav*/
+.nav-toggle, .nav-toggle+label{
+    display:none;
+}
+
 
 /*Thumbnails */
 .thumbnails{
@@ -258,8 +259,11 @@
 }
 /*subscribe now*/
 .subscribe-now{
-    padding: 1rem;   
-    text-align: center; 
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .subscribe-content{
     display:flex;
@@ -356,7 +360,7 @@
 
 /* Media queires */
 /* Media Query for Mobile Devices */ 
-        @media (max-width: 480px) { 
+        @media (max-width: 600px) { 
             /*head-bar*/
             .head-bar{                
               display:flex;                           
@@ -367,6 +371,7 @@
             .search-box{
                 display:none;
             }
+            
             .main-nav ul{
                 position: absolute;
                 margin:0px;
@@ -374,9 +379,21 @@
                 right:0px;
                 display:flex;
                 flex-direction: column;
-                background-color: var(--green);
-                           
+                background-color: var(--green);                           
             }
+            nav{
+                display:none;
+            }
+            .main-nav label{
+                display:block;
+                margin-right:1rem;
+                font-size: 2rem;
+            }
+            
+            .nav-toggle:checked ~ nav{
+               display:block;                
+            }
+           
             .main-nav li{
                 margin-left:1.5rem;
                 margin-bottom: 0.5rem;
